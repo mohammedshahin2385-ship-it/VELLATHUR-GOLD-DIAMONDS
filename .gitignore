@@ -1,0 +1,14 @@
+# Environment files
+.env
+vellathur.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Database
+data/vault.db
+
+# OS files
+.DS_Store
+Thumbs.db
