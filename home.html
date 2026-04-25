@@ -1,0 +1,768 @@
+﻿<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELLATHUR GOLD &amp; DIAMONDS | The Digital Vault</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@200;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#CCA365",
+                        "on-primary": "#F5F2EB",
+                        "primary-container": "#DDF3E4",
+                        "on-primary-container": "#092E17",
+                        "primary-fixed": "#DDF3E4",
+                        "on-primary-fixed": "#002110",
+                        "primary-fixed-dim": "#CCA365",
+                        "on-primary-fixed-variant": "#5E1C24",
+                        "secondary": "#CCA365",
+                        "on-secondary": "#F5F2EB",
+                        "secondary-container": "#F6F1E9",
+                        "on-secondary-container": "#3B311E",
+                        "secondary-fixed": "#F6F1E9",
+                        "on-secondary-fixed": "#221B0B",
+                        "secondary-fixed-dim": "#CCA365",
+                        "on-secondary-fixed-variant": "#4F4533",
+                        "tertiary": "#B89A31",
+                        "on-tertiary": "#F5F2EB",
+                        "tertiary-container": "#FDF4CE",
+                        "on-tertiary-container": "#423200",
+                        "tertiary-fixed": "#FDF4CE",
+                        "on-tertiary-fixed": "#241A00",
+                        "tertiary-fixed-dim": "#E9C349",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "error": "#BA1A1A",
+                        "on-error": "#F5F2EB",
+                        "error-container": "#FFDAD6",
+                        "on-error-container": "#410002",
+                        "outline": "#747775",
+                        "outline-variant": "#C4C7C5",
+                        "background": "#0C0808",
+                        "on-background": "#F5F2EB",
+                        "surface": "#1A1313",
+                        "on-surface": "#F5F2EB",
+                        "surface-variant": "#1A1313",
+                        "on-surface-variant": "#A1A1AA",
+                        "inverse-surface": "#F5F2EB",
+                        "inverse-on-surface": "#0C0808",
+                        "inverse-primary": "#CCA365",
+                        "surface-dim": "#1A1313",
+                        "surface-bright": "#222222",
+                        "surface-container-lowest": "#000000",
+                        "surface-container-low": "#0F0F0F",
+                        "surface-container": "#1A1313",
+                        "surface-container-high": "#1A1313",
+                        "surface-container-highest": "#242424"
+                    },
+                    "borderRadius": {
+                        "none": "0",
+                        "DEFAULT": "0",
+                        "lg": "0",
+                        "xl": "0",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        @font-face {
+            font-family: 'Goodnewsj Roman';
+            src: url('./Goodnewsj%20Roman.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Julietta';
+            src: local('Julietta'), local('julietta');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Adventure Script';
+            src: local('Adventure Script'), local('AdventureScript');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Priestacy';
+            src: url('./fonts/Priestacy.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        body { font-family: 'Manrope', sans-serif; background-color: #0C0808; color: #F5F2EB; -webkit-font-smoothing: antialiased; }
+        .font-noto-serif { font-family: 'Noto Serif', serif; }
+        .font-priestacy { font-family: 'Priestacy', 'Alex Brush', cursive; }
+        .font-adventure-script { font-family: 'Adventure Script', 'Alex Brush', cursive; }
+        .font-julietta { font-family: 'Julietta', 'Alex Brush', cursive; }
+        .font-alex-brush { font-family: 'Alex Brush', cursive; }
+        .font-goodnewsj { font-family: 'Goodnewsj Roman', 'Noto Serif', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { backdrop-filter: blur(24px); background: rgba(26, 19, 19, 0.8); border-left: 1px solid rgba(138, 147, 139, 0.1); border-top: 1px solid rgba(138, 147, 139, 0.1); }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0C0808; }
+        ::-webkit-scrollbar-thumb { background: #CCA365; }
+        .legacy-spotlight {
+            position: relative;
+            overflow: hidden;
+            animation: legacyFloat 7s ease-in-out infinite;
+        }
+        .legacy-spotlight::before {
+            content: "";
+            position: absolute;
+            inset: -40% auto auto -10%;
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle, rgba(204, 163, 101, 0.22) 0%, rgba(204, 163, 101, 0) 70%);
+            filter: blur(10px);
+            animation: legacyGlow 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .legacy-spotlight::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(110deg, transparent 0%, rgba(245, 242, 235, 0.08) 45%, transparent 60%);
+            transform: translateX(-140%);
+            animation: legacySweep 5.8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .legacy-spotlight > * {
+            position: relative;
+            z-index: 1;
+        }
+        .curated-heading {
+            position: relative;
+        }
+        .curated-heading::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 140px;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(204, 163, 101, 0), rgba(204, 163, 101, 0.95), rgba(204, 163, 101, 0));
+            transform-origin: left center;
+            animation: curatedLine 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+        }
+        .curated-kicker {
+            display: inline-block;
+            animation: curatedPulse 3.2s ease-in-out infinite;
+        }
+        @keyframes legacyFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        @keyframes legacyGlow {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.55; }
+            50% { transform: translate3d(34px, 26px, 0) scale(1.18); opacity: 0.9; }
+        }
+        @keyframes legacySweep {
+            0%, 62% { transform: translateX(-140%); opacity: 0; }
+            72% { opacity: 1; }
+            100% { transform: translateX(160%); opacity: 0; }
+        }
+        @keyframes curatedLine {
+            0%, 100% { transform: scaleX(0.42); opacity: 0.5; }
+            50% { transform: scaleX(1); opacity: 1; }
+        }
+        @keyframes curatedPulse {
+            0%, 100% { transform: translateY(0); opacity: 0.72; }
+            50% { transform: translateY(-2px); opacity: 1; }
+        }
+    </style>
+
+<style> .glass-overlay, .bg-surface-container, .bg-primary-container, .bg-surface-container-high, .bg-surface-container-low, img:not([alt="Vellathur Logo"]), button, .aspect-square, .h-\[500px\] { border-radius: 1.5rem !important; } nav button { border-radius: 9999px !important; } </style>
+<link href="kia-header.css" rel="stylesheet"/>
+<link href="scroll-animate.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Loader Overlay -->
+<div id="loader" class="fixed inset-0 z-[10000] bg-[#0C0808] flex flex-col items-center justify-center transition-all duration-[1000ms] ease-[cubic-bezier(0.77,0,0.175,1)]">
+    <div class="relative flex flex-col items-center loader-content transition-all duration-[800ms]">
+        <div class="relative h-24 w-auto flex items-center justify-center">
+            <img src="Asset 3@3x (1).png" alt="Vellathur Logo" class="h-32 md:h-40 w-auto object-contain filter invert mix-blend-screen opacity-10">
+            <div class="absolute inset-0 flex items-center justify-center" style="clip-path: inset(100% 0 0 0); animation: revealLogo 1.5s cubic-bezier(0.77,0,0.175,1) forwards; animation-delay: 0.2s;">
+                <img src="Asset 3@3x (1).png" alt="Vellathur Logo" class="h-32 md:h-40 w-auto object-contain filter invert mix-blend-screen opacity-100" style="filter: invert(1) drop-shadow(0 0 10px rgba(204, 163, 101, 0.3));">
+            </div>
+        </div>
+        <div class="mt-10 w-[1px] h-16 bg-[#1A1313] relative overflow-hidden align-middle self-center">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-[#CCA365] to-transparent transform -translate-y-full" style="animation: dropLine 1.5s cubic-bezier(0.77,0,0.175,1) infinite;"></div>
+        </div>
+        <div class="mt-6 font-label text-[10px] tracking-[0.5em] uppercase text-outline-variant opacity-50" style="animation: pulseText 2s infinite;">
+            Curating
+        </div>
+    </div>
+</div>
+
+<style>
+    #loader.loaded { opacity: 0; pointer-events: none; }
+    #loader.loaded .loader-content { transform: translateY(-50px); opacity: 0; }
+    @keyframes revealLogo { 0% { clip-path: inset(100% 0 0 0); } 100% { clip-path: inset(0 0 0 0); } }
+    @keyframes dropLine { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+    @keyframes pulseText { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+</style>
+
+<script>
+    window.addEventListener('load', () => { setTimeout(() => { const loader = document.getElementById('loader'); if(loader) { loader.classList.add('loaded'); setTimeout(() => loader.remove(), 1000); } }, 1200); });
+</script>
+<!-- TopNavBar -->
+<!-- TopNavBar -->
+<script defer src="kia-header.js"></script>
+<script defer src="scroll-animate.js"></script>
+<header class="fixed top-0 left-0 right-0 z-50 flex w-full pointer-events-none">
+    <div class="flex justify-between items-center px-6 md:px-12 transition-all duration-300 h-[72px] w-full pointer-events-auto bg-[#1A1313]/70 backdrop-blur-xl border-b border-[#5E1C24]/40 shadow-xl flex-row group">
+        <div class="flex-none flex items-center mr-4 md:mr-6 gap-3 h-[40px] md:h-[48px]">
+            <a href="home.html" class="flex flex-row items-center justify-center group whitespace-nowrap gap-3">
+                <img src="images/IMG_1090.png" alt="Vellathur Logo" class="h-8 md:h-10 w-auto object-contain opacity-100 transition-opacity" style="filter: brightness(0) invert(1);">
+                
+            </a>
+        </div>
+        <nav class="hidden lg:flex gap-6 items-center font-noto-serif text-[10px] tracking-[0.15em] uppercase justify-center flex-1">
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="home.html">Home</a>
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="about.html">About Us</a>
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="collections.html">Collections</a>
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="#">New Arrivals</a>
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="contact.html">Contact Us</a>
+        </nav>
+        <div class="flex-none flex items-center justify-end gap-5 ml-auto">
+            <button id="open-rate-modal" type="button" aria-haspopup="dialog" aria-controls="gold-rate-modal" class="hidden md:flex flex-col items-end mr-2 text-right transition-colors hover:text-secondary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A1313]">
+                <span class="text-[#CCA365] text-[9px] font-label tracking-[0.2em] uppercase leading-none mb-1">Today's Rate</span>
+                <span id="header-rate-summary" class="text-[#F5F2EB] font-noto-serif text-[11px] tracking-wider">22K: &#8377;6,670/gm</span>
+            </button>
+
+
+        </div>
+    </div>
+</header>
+<div id="gold-rate-modal-overlay" class="fixed inset-0 z-[10001] bg-[#050304]/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 px-3 sm:px-4 py-4 sm:py-8 overflow-hidden" aria-hidden="true">
+    <div class="min-h-full flex items-center justify-center">
+        <div id="gold-rate-modal" role="dialog" aria-modal="true" aria-labelledby="gold-rate-modal-title" class="relative w-full max-w-[620px] md:w-[620px] md:h-[620px] text-on-surface border border-secondary/40 shadow-[0_30px_120px_rgba(0,0,0,0.7)] rounded-2xl overflow-hidden h-[calc(100vh-2.5rem)] sm:h-[calc(100vh-4rem)] md:max-h-none transition-all duration-300 opacity-0 translate-y-6 scale-[0.97]">
+            <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_18%,rgba(204,163,101,0.18),transparent_40%),radial-gradient(circle_at_82%_8%,rgba(120,26,42,0.8),transparent_45%),radial-gradient(circle_at_40%_92%,rgba(13,8,8,0.95),transparent_50%),linear-gradient(160deg,#12080A_0%,#261016_42%,#32141A_68%,#1A0D11_100%)]"></div>
+            <div class="absolute inset-0 pointer-events-none opacity-[0.08] mix-blend-soft-light bg-[url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22 viewBox=%220 0 140 140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.92%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22140%22 height=%22140%22 filter=%22url(%23n)%22 opacity=%220.9%22/%3E%3C/svg%3E')]"></div>
+            <div class="absolute -top-20 -right-12 w-40 h-40 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-16 -left-10 w-36 h-36 rounded-full bg-[#5E1C24]/50 blur-3xl pointer-events-none"></div>
+            <div class="relative p-4 sm:p-5 h-full">
+                <button id="close-rate-modal" type="button" aria-label="Close gold rate modal" class="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 text-secondary hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary/70 rounded-full p-1">
+                    <span class="material-symbols-outlined text-[20px]">close</span>
+                </button>
+
+                <div class="h-full border border-secondary/30 rounded-2xl bg-black/15 backdrop-blur-[1px] p-3 sm:p-4 flex flex-col">
+                    <div class="relative border border-secondary/30 rounded-xl overflow-hidden">
+                        <img id="rate-feature-image" src="./hero-jewelry.png" alt="Gold diamond bangle display" class="w-full h-[170px] sm:h-[190px] md:h-[210px] object-cover object-center"/>
+                        <div class="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/65 to-transparent"></div>
+                    </div>
+
+                    <div class="pt-2.5 text-center">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 border border-secondary/30 rounded-full bg-black/35">
+                            <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-[ratePulse_2.2s_ease-in-out_infinite]"></span>
+                            <span class="font-label text-[9px] tracking-[0.2em] uppercase text-on-surface-variant">Live Board</span>
+                        </div>
+                        <h2 id="gold-rate-modal-title" class="mt-2 font-noto-serif text-secondary text-xl sm:text-2xl font-bold tracking-[0.09em]">TODAY'S GOLD RATE</h2>
+                        <p id="rate-date" class="mt-1 font-label text-[10px] tracking-[0.24em] uppercase text-on-surface-variant">04-04-26</p>
+                        <div class="mt-2 inline-flex items-center justify-center border border-secondary/30 bg-black/40 px-3 py-1.5 rounded-full">
+                            <span id="rate-status" class="font-label text-[9px] tracking-[0.16em] uppercase text-on-surface-variant">No change in rate</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-2.5 border border-secondary/45 rounded-xl p-3 bg-[linear-gradient(180deg,rgba(204,163,101,0.07),rgba(0,0,0,0.25))]">
+                        <div class="flex items-center justify-between border-b border-secondary/25 pb-1.5">
+                            <p class="font-noto-serif text-secondary text-2xl sm:text-3xl">22K</p>
+                            <span class="font-label text-[8px] tracking-[0.22em] uppercase text-on-surface-variant">Premium Rate</span>
+                        </div>
+                        <div class="mt-2.5 grid grid-cols-2 gap-2.5">
+                            <div class="border border-secondary/35 rounded-lg p-2.5 text-center bg-black/25">
+                                <p class="font-label text-[9px] tracking-[0.2em] uppercase text-on-surface-variant">1 Gram</p>
+                                <p id="rate-22k-1g" class="mt-1.5 font-noto-serif text-secondary text-lg sm:text-xl font-bold">&#8377; 13,835</p>
+                            </div>
+                            <div class="border border-secondary/35 rounded-lg p-2.5 text-center bg-black/25">
+                                <p class="font-label text-[9px] tracking-[0.2em] uppercase text-on-surface-variant">8 Gram</p>
+                                <p id="rate-22k-8g" class="mt-1.5 font-noto-serif text-secondary text-lg sm:text-xl font-bold">&#8377; 1,10,680</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-2.5 grid grid-cols-2 gap-2.5">
+                        <div class="border border-secondary/40 rounded-xl p-2.5 bg-black/20 text-center">
+                            <p class="font-noto-serif text-secondary text-lg sm:text-xl">18K</p>
+                            <p class="font-label text-[9px] tracking-[0.2em] uppercase text-on-surface-variant mt-1.5">1 Gram</p>
+                            <p id="rate-18k-1g" class="mt-1.5 font-noto-serif text-secondary text-base sm:text-lg font-bold">&#8377; 11,370</p>
+                        </div>
+                        <div class="border border-secondary/40 rounded-xl p-2.5 bg-black/20 text-center">
+                            <p class="font-noto-serif text-secondary text-lg sm:text-xl">SILVER</p>
+                            <p class="font-label text-[9px] tracking-[0.2em] uppercase text-on-surface-variant mt-1.5">1 Gram</p>
+                            <p id="rate-silver-1g" class="mt-1.5 font-noto-serif text-secondary text-base sm:text-lg font-bold">&#8377; 250</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto border-t border-secondary/25 pt-2.5 text-center">
+                        <img src="images/IMG_1090.png" alt="Vellathur Logo" class="mx-auto w-20 h-20 object-contain" style="filter: brightness(0) saturate(100%) invert(73%) sepia(24%) saturate(476%) hue-rotate(356deg) brightness(90%) contrast(84%);">
+                        <div class="mt-2 h-px w-full bg-secondary/25"></div>
+                        <p id="rate-address" class="mt-2 font-body text-on-surface-variant text-[10px] sm:text-[11px]">GH Road, Trikkandiyur, Tirur- 676104</p>
+                        <p id="rate-phones" class="mt-1 font-body text-on-surface-variant text-[10px] sm:text-[11px]">0494- 242 2222 | 8157 004 444 | 9895 036 878</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Model wearing ruby and diamond jewelry" class="w-full h-full object-cover brightness-50" data-alt="Close-up portrait of a model draped in burgundy silk wearing ruby and diamond earrings, ring, and necklace with dramatic lighting" src="./Firefly_sharpen the image, add a little shine to the ornaments 259743.png"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/35 to-[#0C0808]"></div>
+</div>
+<div class="relative z-10 text-center max-w-5xl p-12 rounded-none">
+<span class="label-sm font-body uppercase tracking-[0.3em] text-secondary mb-6 block">Gold | Diamond | Silver | Customized jewellery</span>
+
+
+
+<div class="min-h-[120px] md:min-h-[160px] flex items-center justify-center mb-6">
+    <h1 id="hero-title" class="font-priestacy text-6xl md:text-8xl lg:text-[7rem] leading-[0.95] tracking-[0.02em] text-[#F5F2EB] drop-shadow-md transition-all duration-300">
+        The Golden Sparkle <br/> <span class="italic text-primary">of Trust</span>
+    </h1>
+</div>
+
+
+<div class="flex justify-center items-center gap-4 text-secondary mt-8 md:mt-10 mb-12 uppercase tracking-widest text-xs font-label opacity-80">
+    <span>22+ Years of Trust</span>
+    <span>|</span>
+    <span>Tirur, Kerala</span>
+</div>
+<div class="flex flex-col md:flex-row justify-center gap-8 mt-4">
+<a href="collections.html" class="bg-[#CCA365] text-[#0C0808] px-12 py-5 font-label tracking-[0.2em] uppercase hover:bg-[#5E1C24] hover:text-[#F5F2EB] transition-all duration-500 rounded-full text-center">
+                        Explore Collection
+                    </a>
+<a href="about.html" class="border border-outline-variant/30 text-on-surface px-12 py-5 font-label tracking-[0.2em] uppercase hover:bg-surface-variant transition-all duration-500 rounded-full flex items-center justify-center text-center">
+                        Our Legacy
+                    </a>
+</div>
+</div>
+<!-- Side Label -->
+<div class="absolute right-12 bottom-24 hidden lg:block origin-bottom-right rotate-90">
+<p class="font-label text-[10px] tracking-[0.5em] uppercase text-outline-variant">Spring/Summer Series 2024</p>
+</div>
+</section>
+<!-- Heritage Section -->
+<section class="py-32 px-6 md:px-12 bg-surface">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+<div class="order-2 md:order-1">
+<div class="relative aspect-[4/5] bg-surface-container-low p-4">
+<img alt="Goldsmith Craft" class="w-full h-full object-cover" data-alt="Macro detail of an artisan goldsmith meticulously crafting a gold setting with traditional tools in a warm, low-lit atelier environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBciGSuHDBY0i6hOP0l9ngkf1s-kdueblyPfLJRaRZsucGC8H0bB8lDGjpLd6RHPbd7AcvsLuV3y9yCL02hC0VwGcH39YGcYsTVkiLBbVryIvMrZIt8uNWl50wRbMvt0fCH3UTYbuSRb58VOfnfDEy9ueEln5UF6mk01kx6ykiyhE6dJntO689ZVdhk3d7b6dcxqkGx1kYlB7xKr9zxdPPjoJr7RATIcQgf8uH1zS9GIiAlK4xwLXTltwlPmBy9ZXfSYs-N-QoC9y5U"/>
+</div>
+</div>
+<div class="order-1 md:order-2 space-y-8">
+<h2 class="font-noto-serif text-4xl md:text-6xl text-secondary">A Heritage of Pure <span class="italic">Gold</span></h2>
+<p class="font-body text-lg leading-relaxed text-on-surface-variant max-w-lg">
+                        For generations, the Vellathur name has been synonymous with the pursuit of perfection. Each piece in our vault is a testament to the master artisans who breathe life into metal and stone, preserving ancient techniques while embracing contemporary soul.
+                    </p>
+<div class="pt-8">
+<a class="inline-block font-label text-sm uppercase tracking-[0.2em] text-primary border-b border-primary/30 pb-2 hover:border-primary transition-all" href="#">Discover the Atelier</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Brand Features Section -->
+<section class="py-32 px-6 md:px-12 bg-background border-t border-outline-variant/10">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20 max-w-3xl mx-auto">
+            <span class="font-label text-[10px] tracking-[0.3em] uppercase text-secondary mb-4 block">The Vellathur Standard</span>
+            <h2 class="font-noto-serif text-4xl md:text-5xl text-on-surface mb-6">Trusted Locally Since 2003</h2>
+            <p class="font-body text-on-surface-variant text-lg">A proven legacy of impeccable service, offering certified 916 gold and exquisite silver collections in Tirur.</p>
+        </div>
+
+        <div class="legacy-spotlight mb-12 border border-secondary/20 bg-[linear-gradient(135deg,rgba(204,163,101,0.12),rgba(94,28,36,0.16))] p-8 md:p-10 rounded-[2rem] shadow-[0_20px_80px_rgba(0,0,0,0.28)]" data-reveal="scale">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="font-label text-[10px] tracking-[0.28em] uppercase text-secondary mb-4 block">A Milestone We Carry With Pride</span>
+                <p class="font-noto-serif text-2xl md:text-3xl leading-relaxed text-on-surface">
+                    Decades before certification became commonplace, we led the way.
+                </p>
+                <p class="mt-5 font-body text-base md:text-lg leading-8 text-on-surface-variant">
+                    We take immense pride in being the first hallmarked jewelry house in Tirur, and one of the pioneering purveyors of certified 916 gold across Malappuram. We didn't just adapt to the standard, we introduced it to our community.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Column 1: Technical Definitions -->
+            <div class="flex flex-col gap-6">
+                <div class="bg-surface-container-low p-8 border border-outline-variant/10 glass-overlay hover:bg-surface-container transition-colors group">
+                    <span class="material-symbols-outlined text-3xl text-secondary mb-6 block group-hover:scale-110 transition-transform">workspace_premium</span>
+                    <h3 class="font-noto-serif text-xl text-on-surface mb-3">916 Hallmarking</h3>
+                    <p class="font-body text-sm text-on-surface-variant leading-relaxed">We provide 100% certified 22k gold (91.6% purity), ensuring complete authenticity and trust for all our customers.</p>
+                </div>
+                <div class="bg-surface-container-low p-8 border border-outline-variant/10 glass-overlay hover:bg-surface-container transition-colors group">
+                    <span class="material-symbols-outlined text-3xl text-secondary mb-6 block group-hover:scale-110 transition-transform">hardware</span>
+                    <h3 class="font-noto-serif text-xl text-on-surface mb-3">Precious Metals & Stones</h3>
+                    <p class="font-body text-sm text-on-surface-variant leading-relaxed">Beyond gold, we deal extensively in premium silver jewelry and verified precious stones, all backed by strict certification.</p>
+                </div>
+                <div class="bg-surface-container-low p-8 border border-outline-variant/10 glass-overlay hover:bg-surface-container transition-colors group">
+                    <span class="material-symbols-outlined text-3xl text-secondary mb-6 block group-hover:scale-110 transition-transform">diamond</span>
+                    <h3 class="font-noto-serif text-xl text-on-surface mb-3">Diverse Collections</h3>
+                    <p class="font-body text-sm text-on-surface-variant leading-relaxed">A massive inventory featuring everything from heavy bridal necklaces to elegant everyday pendants, earrings, and anklets.</p>
+                </div>
+            </div>
+
+            <!-- Column 2: Core Characteristics (Center Banner) -->
+            <div class="bg-surface-container-high p-10 border border-outline-variant/20 glass-overlay relative overflow-hidden group flex flex-col justify-center text-center">
+                <div class="absolute -right-12 -top-12 text-[200px] text-primary opacity-5 transform group-hover:rotate-12 transition-transform duration-[2s] font-noto-serif italic">V</div>
+                
+                <span class="material-symbols-outlined text-4xl text-primary mx-auto mb-8 block">history_edu</span>
+                <h3 class="font-noto-serif text-3xl text-on-surface mb-6 relative z-10">Established Trust</h3>
+                <p class="font-body text-base text-on-surface-variant leading-relaxed mb-8 relative z-10">Incorporated in May 2003 in Tirur, Kerala, we have spent over two decades serving our community as a trusted retail pillar. We specialize in providing the highest quality 916 hallmarked gold, exquisite silver, and meticulously crafted ornaments.</p>
+                
+                <div class="bg-surface/50 p-6 backdrop-blur-sm rounded-xl border border-outline-variant/10 relative z-10 text-left mt-auto">
+                    <h4 class="font-noto-serif text-lg text-secondary mb-2">Unwavering Trust</h4>
+                    <p class="font-body text-xs text-on-surface-variant">A celebrated micro-enterprise in Malappuram known for transparent operations, customized designs, and dedicated customer service six days a week.</p>
+                </div>
+            </div>
+
+            <!-- Column 3: Primary Use Cases -->
+            <div class="flex flex-col gap-6">
+                <div class="bg-surface-container-low p-8 border border-outline-variant/10 glass-overlay hover:bg-surface-container transition-colors group">
+                    <span class="material-symbols-outlined text-3xl text-secondary mb-6 block group-hover:scale-110 transition-transform">festival</span>
+                    <h3 class="font-noto-serif text-xl text-on-surface mb-3">Bridal Expertise</h3>
+                    <p class="font-body text-sm text-on-surface-variant leading-relaxed">Comprehensive wedding collections tailored to regional styles, providing brides with stunning, highly detailed sets.</p>
+                </div>
+                <div class="bg-surface-container-low p-8 border border-outline-variant/10 glass-overlay hover:bg-surface-container transition-colors group">
+                    <span class="material-symbols-outlined text-3xl text-secondary mb-6 block group-hover:scale-110 transition-transform">style</span>
+                    <h3 class="font-noto-serif text-xl text-on-surface mb-3">Lightweight & Kids</h3>
+                    <p class="font-body text-sm text-on-surface-variant leading-relaxed">Specially curated "Light Weight" daily-wear ornaments alongside dedicated, safe jewelry collections for children.</p>
+                </div>
+                <div class="bg-surface-container-low p-8 border border-outline-variant/10 glass-overlay hover:bg-surface-container transition-colors group">
+                    <span class="material-symbols-outlined text-3xl text-secondary mb-6 block group-hover:scale-110 transition-transform">savings</span>
+                    <h3 class="font-noto-serif text-xl text-on-surface mb-3">Customized Crafting</h3>
+                    <p class="font-body text-sm text-on-surface-variant leading-relaxed">Personalized manufacturing services designed to fulfill modern customer requirements and specific design visions upon request.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Signature Collections Bento Grid -->
+<section class="py-16 px-6 md:px-12 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-10">
+<div class="curated-heading" data-reveal="left">
+<span class="curated-kicker font-label text-[10px] tracking-[0.3em] uppercase text-tertiary">Curated Selection</span>
+<h2 class="font-noto-serif text-3xl md:text-4xl mt-2">Signature Collections</h2>
+</div>
+<a class="hidden md:block font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant hover:text-secondary" href="#">View All Chapters</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<a href="collections.html" class="relative group overflow-hidden border border-outline-variant/20 hover:border-primary/50 transition-colors duration-500 rounded-[2rem] shadow-2xl block aspect-[9/16]">
+<img alt="Vivaaha Bridal Sets Collection" class="w-full h-full object-cover object-[center_top] transition-transform duration-[1.5s] ease-out group-hover:scale-110" data-alt="Exquisite gold bridal jewelry set highlighting traditional luxury" src="images/IMG_1091.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0C0808]/95 via-[#0C0808]/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-700"></div>
+<div class="absolute bottom-0 left-0 w-full p-5 md:p-6 flex flex-col items-start translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out z-10">
+    <span class="font-label text-[8px] tracking-[0.22em] uppercase text-primary mb-2 bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20 backdrop-blur-md shadow-lg">Traditional 916 Gold</span>
+    <h3 class="font-noto-serif text-2xl md:text-3xl mb-1 text-[#F5F2EB] drop-shadow-lg">Vivaaha Bridal Sets</h3>
+    
+    <div class="mb-2">
+        <p class="font-noto-serif italic text-on-surface-variant text-xs md:text-sm opacity-0 blur-[8px] translate-y-4 group-hover:opacity-100 group-hover:blur-none group-hover:translate-y-0 transition-all duration-1000 ease-out delay-100 relative">
+            Crafted for your perfect day.
+            <span class="absolute left-0 -bottom-1 w-0 h-[1px] bg-[#CCA365]/50 group-hover:w-full transition-all duration-1000 delay-300 ease-out"></span>
+        </p>
+    </div>
+
+    <div class="mt-2 flex items-center gap-2 text-[#CCA365] opacity-0 group-hover:opacity-100 transition-all duration-700 delay-[400ms]">
+        <span class="font-label text-[9px] tracking-[0.18em] uppercase">Explore Elements</span>
+        <span class="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform duration-500">arrow_right_alt</span>
+    </div>
+</div>
+</a>
+<a href="diamonds.html" class="relative group overflow-hidden border border-outline-variant/20 hover:border-primary/50 transition-colors duration-500 rounded-[2rem] shadow-xl block aspect-[9/16]">
+<img alt="The Celestial Diamond Ring" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110" data-alt="Close-up of a brilliant cut diamond ring on a hand with soft, warm golden hour lighting creating a premium bokeh effect" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOwXxBMD_SdiwUGxw-fxxQD407rzTES6U8IRZdWlbWCXoYBMX_MWMyJsZvLLFG76W-YyMIIvJKtlbFFSTx_Z1Hl6-trV2fU0BwrfyaklbpUtFnyNWZmZt7c0QSm9nhaQdzoG8JAxe-mFaR8JDD6u8MuNTJO4PgfeCImHRQGLBykk3ypFDvmnAJ6ttIcovqdjIfSEGJ_Jih4hBF3UyQcs4GTiXdPJjNzm6plYkU6HdvwuOhVvYbyF5gfbTSSMKysESN-14ivBgus9XI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0C0808]/95 via-[#0C0808]/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-700"></div>
+<div class="absolute bottom-0 left-0 w-full p-4 md:p-5 flex flex-col items-start translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out z-10">
+    <span class="font-label text-[8px] tracking-[0.24em] uppercase text-primary mb-2 bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20 backdrop-blur-md shadow-lg">Authentic Solitaires</span>
+    <h3 class="font-noto-serif text-xl md:text-2xl mb-1 text-[#F5F2EB] drop-shadow-md">Certified Diamonds</h3>
+    
+    <div class="mb-2">
+        <p class="font-noto-serif italic text-on-surface-variant text-[11px] md:text-xs opacity-0 blur-[6px] translate-y-3 group-hover:opacity-100 group-hover:blur-none group-hover:translate-y-0 transition-all duration-1000 ease-out delay-100 relative max-w-max">
+            Brilliance in every single cut.
+            <span class="absolute left-0 -bottom-1 w-0 h-[1px] bg-[#CCA365]/50 group-hover:w-full transition-all duration-1000 delay-300 ease-out"></span>
+        </p>
+    </div>
+
+    <div class="mt-1 flex items-center gap-2 text-[#CCA365] opacity-0 group-hover:opacity-100 transition-all duration-700 delay-[400ms]">
+        <span class="font-label text-[9px] tracking-[0.18em] uppercase">View Collection</span>
+        <span class="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform duration-500">arrow_right_alt</span>
+    </div>
+</div>
+</a>
+<a href="collections.html" class="relative group overflow-hidden border border-outline-variant/20 hover:border-primary/50 transition-colors duration-500 rounded-[2rem] shadow-xl block aspect-[9/16]">
+<img alt="Lightweight Everyday Bangles" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110" data-alt="Elegant lightweight gold jewelry perfect for daily wear" src="images/Gemini_Generated_Image_4m68f64m68f64m68.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0C0808]/95 via-[#0C0808]/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-700"></div>
+<div class="absolute bottom-0 left-0 w-full p-4 md:p-5 flex flex-col items-start translate-y-2 group-hover:translate-y-0 transition-transform duration-700 ease-out z-10">
+    <span class="font-label text-[8px] tracking-[0.24em] uppercase text-primary mb-2 bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20 backdrop-blur-md shadow-lg">Everyday Elegance</span>
+    <h3 class="font-noto-serif text-xl md:text-2xl mb-1 text-[#F5F2EB] drop-shadow-md">Lightweight Series</h3>
+    
+    <div class="mb-2">
+        <p class="font-noto-serif italic text-on-surface-variant text-[11px] md:text-xs opacity-0 blur-[6px] translate-y-3 group-hover:opacity-100 group-hover:blur-none group-hover:translate-y-0 transition-all duration-1000 ease-out delay-100 relative max-w-max">
+            Elegance for your everyday.
+            <span class="absolute left-0 -bottom-1 w-0 h-[1px] bg-[#CCA365]/50 group-hover:w-full transition-all duration-1000 delay-300 ease-out"></span>
+        </p>
+    </div>
+
+    <div class="mt-1 flex items-center gap-2 text-[#CCA365] opacity-0 group-hover:opacity-100 transition-all duration-700 delay-[400ms]">
+        <span class="font-label text-[9px] tracking-[0.18em] uppercase">View Collection</span>
+        <span class="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform duration-500">arrow_right_alt</span>
+    </div>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+</main>
+<!-- Footer -->
+<footer class="bg-[#0C0808] flex flex-col gap-8 w-full py-16 px-6 md:px-12 border-t border-[#5E1C24]/30">
+<div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+    <div class="flex flex-col items-start md:items-center gap-4 md:max-w-[320px]">
+        <img src="images/IMG_1090.png" alt="Vellathur Logo" class="h-10 md:h-12 w-auto object-contain opacity-100" style="filter: brightness(0) invert(1);">
+        <span class="font-label text-[9px] tracking-widest uppercase text-[#888888] text-center">Tirur, Kerala | 22+ Years of Trust</span>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 text-left">
+        <div class="flex flex-col gap-3">
+            <span class="font-label text-[10px] tracking-[0.24em] uppercase text-[#888888]">Links</span>
+            <div class="flex flex-col gap-2 font-manrope text-[11px] tracking-[0.08em] uppercase text-[#CCA365]">
+                <a class="hover:text-[#F5F2EB] transition-colors" href="about.html">About Us</a>
+                <a class="hover:text-[#F5F2EB] transition-colors" href="collections.html">Collections</a>
+                <a class="hover:text-[#F5F2EB] transition-colors" href="#">New Arrivals</a>
+                <a class="hover:text-[#F5F2EB] transition-colors" href="contact.html">Contact Us</a>
+            </div>
+        </div>
+        <div class="flex flex-col gap-3">
+            <span class="font-label text-[10px] tracking-[0.24em] uppercase text-[#888888]">Connect</span>
+            <div class="flex flex-wrap gap-x-6 gap-y-2 font-manrope text-[11px] tracking-[0.08em] text-[#CCA365]">
+<a aria-label="Instagram" class="inline-flex items-center opacity-60 hover:opacity-100 transition-opacity" href="https://www.instagram.com/vellathur_gold_and_diamonds?igsh=dDZndWt5NnoxZGE4" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5ZM17.5 6.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/></svg></a>
+<a aria-label="Email" class="inline-flex items-center opacity-60 hover:opacity-100 transition-opacity" href="mailto:vellathur916@gmail.com"><span class="material-symbols-outlined text-base">mail</span></a>
+<a aria-label="Location" class="inline-flex items-center opacity-60 hover:opacity-100 transition-opacity" href="https://share.google/0uj0nIh3qxpYNAFAT" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-base">location_on</span></a>
+</div>
+        </div>
+    </div>
+</div>
+<div class="w-full max-w-7xl mx-auto pt-4 border-t border-[#5E1C24]/20 font-manrope text-[10px] tracking-[0.2em] uppercase text-[#CCA365] opacity-40 text-center md:text-left">
+            Ã‚Â© 2024 VELLATHUR GOLD &amp; DIAMONDS. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const openButton = document.getElementById('open-rate-modal');
+        const headerSummary = document.getElementById('header-rate-summary');
+        const overlay = document.getElementById('gold-rate-modal-overlay');
+        const modal = document.getElementById('gold-rate-modal');
+        const closeButton = document.getElementById('close-rate-modal');
+
+        if (!openButton || !overlay || !modal || !closeButton) return;
+
+        const dynamicRateData = {
+            date: null, // Bind backend date string here if available.
+            status: 'No change in rate',
+            rate22kPerGram: 13835,
+            rate22kPer8Gram: 110680,
+            rate18kPerGram: 11370,
+            silverPerGram: 250,
+            address: 'GH Road, Trikkandiyur, Tirur- 676104',
+            phones: '0494- 242 2222 | 8157 004 444 | 9895 036 878',
+            featureImage: './hero-jewelry.png'
+        };
+
+        const formatCurrency = (value) => `\u20B9 ${Number(value).toLocaleString('en-IN')}`;
+        const getDefaultDate = () => {
+            const d = new Date();
+            const dd = String(d.getDate()).padStart(2, '0');
+            const mm = String(d.getMonth() + 1).padStart(2, '0');
+            const yy = String(d.getFullYear()).slice(-2);
+            return `${dd}-${mm}-${yy}`;
+        };
+
+        const setText = (id, value) => {
+            const el = document.getElementById(id);
+            if (el && value) el.textContent = value;
+        };
+
+        const formatDateFromIso = (isoDate) => {
+            const d = new Date(isoDate);
+            if (Number.isNaN(d.getTime())) return getDefaultDate();
+            const dd = String(d.getDate()).padStart(2, '0');
+            const mm = String(d.getMonth() + 1).padStart(2, '0');
+            const yy = String(d.getFullYear()).slice(-2);
+            return `${dd}-${mm}-${yy}`;
+        };
+
+        const applyRateDataToUi = () => {
+            setText('rate-date', dynamicRateData.date || getDefaultDate());
+            setText('rate-status', dynamicRateData.status);
+            setText('rate-22k-1g', formatCurrency(dynamicRateData.rate22kPerGram));
+            setText('rate-22k-8g', formatCurrency(dynamicRateData.rate22kPer8Gram));
+            setText('rate-18k-1g', formatCurrency(dynamicRateData.rate18kPerGram));
+            setText('rate-silver-1g', formatCurrency(dynamicRateData.silverPerGram));
+            setText('rate-address', dynamicRateData.address);
+            setText('rate-phones', dynamicRateData.phones);
+            if (headerSummary) {
+                headerSummary.textContent = `22K: ${formatCurrency(dynamicRateData.rate22kPerGram)}/gm`;
+            }
+        };
+
+        const loadLatestRates = async () => {
+            try {
+                const response = await fetch('/api/rates');
+                if (!response.ok) return;
+                const result = await response.json();
+                const rates = result && result.rates ? result.rates : null;
+                if (!rates) return;
+
+                dynamicRateData.rate22kPerGram = Number(rates.rate_22k_1g) || dynamicRateData.rate22kPerGram;
+                dynamicRateData.rate22kPer8Gram = Number(rates.rate_22k_8g) || dynamicRateData.rate22kPer8Gram;
+                dynamicRateData.rate18kPerGram = Number(rates.rate_18k_1g) || dynamicRateData.rate18kPerGram;
+                dynamicRateData.silverPerGram = Number(rates.silver_1g) || dynamicRateData.silverPerGram;
+                dynamicRateData.status = rates.market_status || dynamicRateData.status;
+                dynamicRateData.date = rates.created_at ? formatDateFromIso(rates.created_at) : dynamicRateData.date;
+            } catch {
+                // Keep current defaults when API is unavailable.
+            }
+        };
+
+        const imageEl = document.getElementById('rate-feature-image');
+        if (imageEl) {
+            imageEl.src = dynamicRateData.featureImage;
+            imageEl.onerror = () => {
+                if (imageEl.src.includes('hero-jewelry.png')) {
+                    imageEl.src = './images/IMG_1091.jpeg';
+                    return;
+                }
+                imageEl.src = './Asset 3@3x (1).png';
+            };
+        }
+
+        applyRateDataToUi();
+        loadLatestRates().then(applyRateDataToUi);
+
+        let lastFocusedElement = null;
+
+        const openModal = () => {
+            lastFocusedElement = document.activeElement;
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.setAttribute('aria-hidden', 'false');
+            modal.classList.remove('opacity-0', 'translate-y-6', 'scale-[0.97]');
+            modal.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+            document.body.classList.add('overflow-hidden');
+            closeButton.focus();
+        };
+
+        const closeModal = () => {
+            modal.classList.remove('opacity-100', 'translate-y-0', 'scale-100');
+            modal.classList.add('opacity-0', 'translate-y-6', 'scale-[0.97]');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('overflow-hidden');
+            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+                lastFocusedElement.focus();
+            }
+        };
+
+        openButton.addEventListener('click', openModal);
+        closeButton.addEventListener('click', closeModal);
+        overlay.addEventListener('click', (event) => {
+            if (!modal.contains(event.target)) closeModal();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && overlay.getAttribute('aria-hidden') === 'false') {
+                closeModal();
+            }
+        });
+    });
+</script>
+
+<style>
+    @keyframes ratePulse {
+        0%, 100% { opacity: 0.45; transform: scale(0.9); }
+        50% { opacity: 1; transform: scale(1.1); }
+    }
+</style>
+
+<!-- Custom Cursor Element -->
+<div id="custom-cursor" class="fixed top-0 left-0 w-3 h-3 bg-[#CCA365] rounded-full pointer-events-none z-[10005] mix-blend-difference transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out opacity-0 hidden md:block"></div>
+<div id="custom-cursor-follower" class="fixed top-0 left-0 w-10 h-10 border border-[#CCA365] rounded-full pointer-events-none z-[10004] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-out opacity-0 hidden md:block"></div>
+
+<style>
+    @media (min-width: 768px) {
+        body, a, button, input, select, textarea {
+            cursor: none !important;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.innerWidth < 768) return; // Only desktop
+        const cursor = document.getElementById('custom-cursor');
+        const cursorFollower = document.getElementById('custom-cursor-follower');
+        
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let followerX = window.innerWidth/2, followerY = window.innerHeight/2;
+        let isHovering = false;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            cursor.style.opacity = 1;
+            cursorFollower.style.opacity = 1;
+        });
+
+        const loop = () => {
+            cursorX += (mouseX - cursorX) * 0.4;
+            cursorY += (mouseY - cursorY) * 0.4;
+            
+            followerX += (mouseX - followerX) * 0.15;
+            followerY += (mouseY - followerY) * 0.15;
+            
+            const scale = isHovering ? 1.5 : 1;
+            
+            cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+            cursorFollower.style.transform = `translate(${followerX}px, ${followerY}px) translate(-50%, -50%) scale(${scale})`;
+            
+            requestAnimationFrame(loop);
+        };
+        loop();
+
+        const interactables = document.querySelectorAll('a, button');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                isHovering = true;
+                cursorFollower.style.backgroundColor = 'rgba(204, 163, 101, 0.2)';
+            });
+            el.addEventListener('mouseleave', () => {
+                isHovering = false;
+                cursorFollower.style.backgroundColor = 'transparent';
+            });
+        });
+    });
+</script>
+
+
+</body></html>
+

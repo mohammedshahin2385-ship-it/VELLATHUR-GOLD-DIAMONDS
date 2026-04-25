@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                        "primary": "#CCA365",
+                        "on-primary": "#F5F2EB",
+                        "primary-container": "#DDF3E4",
+                        "on-primary-container": "#092E17",
+                        "primary-fixed": "#DDF3E4",
+                        "on-primary-fixed": "#002110",
+                        "primary-fixed-dim": "#CCA365",
+                        "on-primary-fixed-variant": "#5E1C24",
+                        "secondary": "#CCA365",
+                        "on-secondary": "#F5F2EB",
+                        "secondary-container": "#F6F1E9",
+                        "on-secondary-container": "#3B311E",
+                        "secondary-fixed": "#F6F1E9",
+                        "on-secondary-fixed": "#221B0B",
+                        "secondary-fixed-dim": "#CCA365",
+                        "on-secondary-fixed-variant": "#4F4533",
+                        "tertiary": "#B89A31",
+                        "on-tertiary": "#F5F2EB",
+                        "tertiary-container": "#FDF4CE",
+                        "on-tertiary-container": "#423200",
+                        "tertiary-fixed": "#FDF4CE",
+                        "on-tertiary-fixed": "#241A00",
+                        "tertiary-fixed-dim": "#E9C349",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "error": "#BA1A1A",
+                        "on-error": "#F5F2EB",
+                        "error-container": "#FFDAD6",
+                        "on-error-container": "#410002",
+                        "outline": "#747775",
+                        "outline-variant": "#C4C7C5",
+                        "background": "#0C0808",
+                        "on-background": "#F5F2EB",
+                        "surface": "#1A1313",
+                        "on-surface": "#F5F2EB",
+                        "surface-variant": "#1A1313",
+                        "on-surface-variant": "#A1A1AA",
+                        "inverse-surface": "#F5F2EB",
+                        "inverse-on-surface": "#0C0808",
+                        "inverse-primary": "#CCA365",
+                        "surface-dim": "#1A1313",
+                        "surface-bright": "#222222",
+                        "surface-container-lowest": "#000000",
+                        "surface-container-low": "#0F0F0F",
+                        "surface-container": "#1A1313",
+                        "surface-container-high": "#1A1313",
+                        "surface-container-highest": "#242424"
+                    },
+                    "borderRadius": {
+                    "DEFAULT": "1.5rem",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .gold-glow {
+            box-shadow: 0 20px 40px -15px rgba(233, 195, 73, 0.08);
+        }
+        .atelier-blur {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+
+<style> .glass-overlay, .bg-surface-container, .bg-primary-container, .bg-surface-container-high, .bg-surface-container-low, img:not([alt="Vellathur Logo"]), button, .aspect-square, .h-\[500px\] { border-radius: 1.5rem !important; } nav button { border-radius: 9999px !important; } </style>
+<link href="kia-header.css" rel="stylesheet"/>
+<link href="scroll-animate.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-tertiary/30">
+<!-- Loader Overlay -->
+<div id="loader" class="fixed inset-0 z-[10000] bg-[#0C0808] flex flex-col items-center justify-center transition-all duration-[1000ms] ease-[cubic-bezier(0.77,0,0.175,1)]">
+    <div class="relative flex flex-col items-center loader-content transition-all duration-[800ms]">
+        <div class="relative h-24 w-auto flex items-center justify-center">
+            <img src="Asset 3@3x (1).png" alt="Vellathur Logo" class="h-32 md:h-40 w-auto object-contain filter invert mix-blend-screen opacity-10">
+            <div class="absolute inset-0 flex items-center justify-center" style="clip-path: inset(100% 0 0 0); animation: revealLogo 1.5s cubic-bezier(0.77,0,0.175,1) forwards; animation-delay: 0.2s;">
+                <img src="Asset 3@3x (1).png" alt="Vellathur Logo" class="h-32 md:h-40 w-auto object-contain filter invert mix-blend-screen opacity-100" style="filter: invert(1) drop-shadow(0 0 10px rgba(204, 163, 101, 0.3));">
+            </div>
+        </div>
+        <div class="mt-10 w-[1px] h-16 bg-[#1A1313] relative overflow-hidden align-middle self-center">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-[#CCA365] to-transparent transform -translate-y-full" style="animation: dropLine 1.5s cubic-bezier(0.77,0,0.175,1) infinite;"></div>
+        </div>
+        <div class="mt-6 font-label text-[10px] tracking-[0.5em] uppercase text-outline-variant opacity-50" style="animation: pulseText 2s infinite;">
+            Curating
+        </div>
+    </div>
+</div>
+
+<style>
+    #loader.loaded { opacity: 0; pointer-events: none; }
+    #loader.loaded .loader-content { transform: translateY(-50px); opacity: 0; }
+    @keyframes revealLogo { 0% { clip-path: inset(100% 0 0 0); } 100% { clip-path: inset(0 0 0 0); } }
+    @keyframes dropLine { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+    @keyframes pulseText { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+</style>
+
+<script>
+    window.addEventListener('load', () => { setTimeout(() => { const loader = document.getElementById('loader'); if(loader) { loader.classList.add('loaded'); setTimeout(() => loader.remove(), 1000); } }, 1200); });
+</script>
+<!-- Top Navigation Bar -->
+<!-- TopNavBar -->
+<script defer src="kia-header.js"></script>
+<script defer src="scroll-animate.js"></script>
+<header class="fixed top-0 left-0 right-0 z-50 flex w-full pointer-events-none">
+    <div class="flex justify-between items-center px-6 md:px-12 transition-all duration-300 h-[72px] w-full pointer-events-auto bg-[#1A1313]/70 backdrop-blur-xl border-b border-[#5E1C24]/40 shadow-xl flex-row group">
+        <div class="flex-none flex items-center mr-4 md:mr-6 gap-3 h-[40px] md:h-[48px]">
+            <a href="home.html" class="flex flex-row items-center justify-center group whitespace-nowrap gap-3">
+                <img src="images/IMG_1090.png" alt="Vellathur Logo" class="h-8 md:h-10 w-auto object-contain opacity-100 transition-opacity" style="filter: brightness(0) invert(1);">
+            </a>
+        </div>
+        <nav class="hidden lg:flex gap-6 items-center font-noto-serif text-[10px] tracking-[0.15em] uppercase justify-center flex-1">
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="home.html">Home</a>
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="about.html">About Us</a>
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="collections.html">Collections</a>
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="#">New Arrivals</a>
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="contact.html">Contact Us</a>
+        </nav>
+        <div class="flex-none flex items-center justify-end gap-5 ml-auto">
+            <div class="hidden md:flex flex-col items-end mr-2">
+                <span class="text-[#CCA365] text-[9px] font-label tracking-[0.2em] uppercase leading-none mb-1">Today's Rate</span>
+                <span class="text-[#F5F2EB] font-noto-serif text-[11px] tracking-wider">22K: ₹6,670/gm</span>
+            </div>
+
+
+        </div>
+    </div>
+</header>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<header class="px-12 mb-20">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="label-sm uppercase tracking-[0.3em] text-tertiary mb-4 block">The Collection</span>
+<h1 class="text-6xl md:text-8xl font-headline leading-tight">22k Gold <br/><span class="italic text-secondary font-light">Lustre</span></h1>
+</div>
+<div class="pb-4">
+<p class="max-w-xs text-on-surface-variant font-body leading-relaxed text-sm">
+                        Curated masterpieces crafted in the highest purity. A testament to ancestral craftsmanship and contemporary elegance.
+                    </p>
+</div>
+</div>
+</header>
+<!-- Product Grid - Bento Style -->
+<section class="px-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Hero Product Card -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-low gold-glow h-[600px]">
+<img alt="Heritage Gold Necklace" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Magnificent 22k gold necklace with intricate filigree work displayed on a dark velvet stand with dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9W0YJp3bPLADMVotZVW9nQdmPJwwR4Fl06LAWG9PlTYUI-OCzUNnV_ahY2pXB2OtVAb8GzCXM-iesnDWD4HQK16Tp-LdMPJoPq0wl5mBCPTnzBwrJ0SoKoHd_I_lFxet2apmTtK0qW_I3MoWQwoLV4ox8F_MBdEU2Ze1Xww2iT-h_EtjAW5UIxD99S8J35j2MnUEkDC_CsL9ZPBMpu_eXX3Lsq0KwQz9snKEJTCcsjWqx1WAqLATCsB8TjIBYamJehA-gqe_RDiND"/>
+<div class="absolute bottom-0 left-0 p-12 bg-gradient-to-t from-surface to-transparent w-full">
+<span class="label-sm tracking-widest text-tertiary uppercase mb-2 block">Signature Heritage</span>
+<h2 class="text-4xl font-headline mb-4">Temple Motif Grand Choker</h2>
+<button class="border-b border-tertiary pb-1 text-xs uppercase tracking-widest text-on-surface hover:text-tertiary transition-colors">View Details</button>
+</div>
+</div>
+<!-- Secondary Product Card -->
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container-low gold-glow h-[600px]">
+<img alt="Aura Bangles" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Exquisite gold bangles with delicate engravings shot in a high-contrast studio setting with deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH1o61qPJ06Lnl9QR0_1DmUrvQx7lhZ5lXOyT45sB-jsXhX3Tyteqpy9y-TWSBUi7HXxt-WWedzZUW-bknmhd5yeRph2ZefJfmastZLAPoV-ueZI3ma2lYCk1PnN-4lFDgSVlTBHLoAYIqUH9I2sfTwpJSO0mgZfeyf9RV6KTSSFgeMUCB_7nzFleYv69GevXR6KTTyza5C9ExYt1TNta5VSq9w0vjJUKvoc25NHpMMWcmGtkCz5Ablm97Xrb9TG7oaTUt7foKi0zO"/>
+<div class="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-surface to-transparent w-full">
+<h3 class="text-2xl font-headline mb-2">Aura Bridal Bangles</h3>
+</div>
+</div>
+<!-- Three Column Grid -->
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container-low gold-glow aspect-[4/5]">
+<div class="p-8 h-full flex flex-col">
+<div class="flex-grow overflow-hidden">
+<img alt="Ruby Ring" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" data-alt="Close up of a 22k gold ring with ruby stone inlay on a dark textured background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2iK0u4MvF4YOmQhmygO7qYSmu9iqknEqSjk4dJ320VLzHxaHyVUm4XX6eeUBo7A3SEhiffhKA3lmA4vgYOV0iyTLSjTgu0ZQO6RRdMt1CHGW-7zdLMmu148Gggzyz32siVyvRp9E0XMdj-4zGrxilDK7zhaQL21vXKlvOXN1hMxkoAhBF-setKG-Z9v7984pL9tO1pBdSS5l_j_5fl_BnNn7FzguLyOupM3ZDdM5uH1zL3ZVADI5J6RhUFnllvrAzKUe5g0bpnt_-"/>
+</div>
+<div class="mt-6">
+<h3 class="text-xl font-headline uppercase tracking-wide">Vedic Sun Ring</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="text-on-surface-variant text-sm font-label uppercase tracking-widest">Weight: 14g</span>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container-low gold-glow aspect-[4/5]">
+<div class="p-8 h-full flex flex-col">
+<div class="flex-grow overflow-hidden">
+<img alt="Pearl Drop Earrings" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" data-alt="Pair of gold dangling earrings with pearl drops against a soft emerald fabric background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjE6yEHzHt2BqS2YR55RF8s7k4QhbeK7noxS8VFkTenUq3r_9iZccifGlJIaI0ORhK-5Jbign5sOH3CdmfpxMHKVdDXQ_JoAgYlADLdqd5zzrYt4vENWHPsa-T1pCapVDuDKu1oNN_3z5iGCjzn8oivWcwP5GQALYJhop-5RPLax5qg_q_7EemSg89d_DYnE2edps6u7yPyx7sgRgYf-TR8PwZO1pSvqpFZls_S59BUUv-LLOjS4SncB8xO__5dz26bZkgEtMyI92A"/>
+</div>
+<div class="mt-6">
+<h3 class="text-xl font-headline uppercase tracking-wide">Lotus Drop Jhumkas</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="text-on-surface-variant text-sm font-label uppercase tracking-widest">Weight: 22g</span>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container-low gold-glow aspect-[4/5]">
+<div class="p-8 h-full flex flex-col">
+<div class="flex-grow overflow-hidden">
+<img alt="Modern Gold Pendant" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" data-alt="Modern geometric gold pendant hanging from a thin gold chain against a dark marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_LdH-GKzLkmGFtWUto2TEhhMb57nMJqb1dmOKqVUID6ueVOfP1c_zoEEi7cDlb83dKO-rT4Xcm_xP3AxI3qVmo8_A1qoKZPXZY-zPWGrqvb0nyo5bLjYSi9BRLPmWpYjHKgc6ZKY_zjpXA7RP47iR4ap887LjuLGKSUGyQ-MzALCH5MGIWspOZfcUXOEyAzWlL-T7OjApBsr7sEgsaefeh6zOk93CzMB7p1_sd9EupMOjCP369_-J65-wJ-Ybs6U_GzC9DP6UOGEt"/>
+</div>
+<div class="mt-6">
+<h3 class="text-xl font-headline uppercase tracking-wide">Geometric Prism Chain</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="text-on-surface-variant text-sm font-label uppercase tracking-widest">Weight: 8g</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-24 px-12">
+<div class="bg-surface-container-high p-20 flex flex-col items-center text-center">
+<h2 class="text-4xl md:text-5xl font-headline mb-8 max-w-2xl leading-tight">Create a Legacy That <span class="italic text-tertiary">Endures</span></h2>
+<div class="flex flex-col md:flex-row gap-6">
+<a href="contact.html" class="bg-primary-container text-[#0C0808] px-12 py-5 text-sm uppercase tracking-[0.2em] font-medium hover:bg-primary hover:text-[#0C0808] transition-colors duration-300 inline-flex items-center justify-center">
+                        Book An Appointment
+                    </a>
+<button class="border border-outline-variant text-on-surface px-12 py-5 text-sm uppercase tracking-[0.2em] font-medium hover:bg-surface-variant transition-colors duration-300">
+                        Digital Catalogue
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0C0808] flex flex-col items-center gap-2 w-full w-full py-16 px-6 md:px-12 border-t border-[#5E1C24]/30">
+<div class="flex flex-col items-center gap-4">
+    <div class="flex flex-col items-center">
+        <img src="images/IMG_1090.png" alt="Vellathur Logo" class="h-16 md:h-20 w-auto object-contain opacity-100 mb-4" style="filter: brightness(0) invert(1);">
+        
+        <div class="flex flex-col items-center space-y-1 mb-1">
+            <span class="font-label text-[9px] tracking-widest uppercase text-[#888888]">Tirur, Kerala • 22+ Years of Trust</span>
+        </div>
+    </div>
+</div>
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-1 font-manrope text-[11px] tracking-[0.08em] text-[#CCA365]">
+<a aria-label="Instagram" class="inline-flex items-center opacity-60 hover:opacity-100 transition-opacity" href="https://www.instagram.com/vellathur_gold_and_diamonds?igsh=dDZndWt5NnoxZGE4" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5ZM17.5 6.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/></svg></a>
+<a aria-label="Email" class="inline-flex items-center opacity-60 hover:opacity-100 transition-opacity" href="mailto:vellathur916@gmail.com"><span class="material-symbols-outlined text-base">mail</span></a>
+<a aria-label="Location" class="inline-flex items-center opacity-60 hover:opacity-100 transition-opacity" href="https://share.google/0uj0nIh3qxpYNAFAT" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-base">location_on</span></a>
+</div>
+<div class="font-manrope text-[10px] tracking-[0.2em] uppercase text-[#CCA365] opacity-40 mt-2 text-center">
+            Â© 2024 VELLATHUR GOLD &amp; DIAMONDS. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+
+<!-- Custom Cursor Element -->
+<div id="custom-cursor" class="fixed top-0 left-0 w-3 h-3 bg-[#CCA365] rounded-full pointer-events-none z-[9999] mix-blend-difference transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out opacity-0 hidden md:block"></div>
+<div id="custom-cursor-follower" class="fixed top-0 left-0 w-10 h-10 border border-[#CCA365] rounded-full pointer-events-none z-[9998] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-out opacity-0 hidden md:block"></div>
+
+<style>
+    @media (min-width: 768px) {
+        body, a, button, input, select, textarea {
+            cursor: none !important;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.innerWidth < 768) return; // Only desktop
+        const cursor = document.getElementById('custom-cursor');
+        const cursorFollower = document.getElementById('custom-cursor-follower');
+        
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let followerX = window.innerWidth/2, followerY = window.innerHeight/2;
+        let isHovering = false;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            cursor.style.opacity = 1;
+            cursorFollower.style.opacity = 1;
+        });
+
+        const loop = () => {
+            cursorX += (mouseX - cursorX) * 0.4;
+            cursorY += (mouseY - cursorY) * 0.4;
+            
+            followerX += (mouseX - followerX) * 0.15;
+            followerY += (mouseY - followerY) * 0.15;
+            
+            const scale = isHovering ? 1.5 : 1;
+            
+            cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+            cursorFollower.style.transform = `translate(${followerX}px, ${followerY}px) translate(-50%, -50%) scale(${scale})`;
+            
+            requestAnimationFrame(loop);
+        };
+        loop();
+
+        const interactables = document.querySelectorAll('a, button');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                isHovering = true;
+                cursorFollower.style.backgroundColor = 'rgba(204, 163, 101, 0.2)';
+            });
+            el.addEventListener('mouseleave', () => {
+                isHovering = false;
+                cursorFollower.style.backgroundColor = 'transparent';
+            });
+        });
+    });
+</script>
+
+</body></html>

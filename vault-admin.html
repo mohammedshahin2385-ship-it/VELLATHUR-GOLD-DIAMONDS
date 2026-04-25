@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vault Admin | Vellathur Gold &amp; Diamonds</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vault: {
+              bg: "#0C0808",
+              surface: "#1A1313",
+              border: "#3D2E2B",
+              text: "#F5F2EB",
+              muted: "#B5AAA0",
+              gold: "#CCA365",
+              success: "#98d4ac",
+              danger: "#BA1A1A"
+            }
+          },
+          fontFamily: {
+            heading: ["Noto Serif", "serif"],
+            body: ["Manrope", "sans-serif"]
+          },
+          boxShadow: {
+            vault: "0 30px 90px rgba(0, 0, 0, 0.45)"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background:
+        radial-gradient(circle at top, rgba(204, 163, 101, 0.08), transparent 35%),
+        linear-gradient(180deg, rgba(12, 8, 8, 0.96), rgba(12, 8, 8, 1));
+    }
+
+    .vault-panel {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0)),
+        rgba(26, 19, 19, 0.94);
+      backdrop-filter: blur(18px);
+    }
+
+    .field-shell:focus-within {
+      border-color: #CCA365;
+      box-shadow: 0 0 0 1px rgba(204, 163, 101, 0.45);
+    }
+  </style>
+</head>
+<body class="min-h-screen font-body text-vault-text">
+  <main class="min-h-screen flex items-center justify-center px-6 py-12">
+    <section class="vault-panel w-full max-w-2xl rounded-[28px] border border-vault-border shadow-vault overflow-hidden">
+      <div class="border-b border-vault-border px-6 py-6 sm:px-8">
+        <p class="text-[10px] uppercase tracking-[0.32em] text-vault-muted">Private Access</p>
+        <h1 class="mt-3 font-heading text-3xl text-vault-text sm:text-4xl">Vault Administration</h1>
+        <p class="mt-3 max-w-lg text-sm leading-6 text-vault-muted">
+          Restricted controls for daily pricing and collection uploads.
+        </p>
+      </div>
+
+      <div class="px-6 py-6 sm:px-8 sm:py-8">
+        <div class="space-y-3">
+          <label for="master-passphrase" class="block text-[11px] uppercase tracking-[0.22em] text-vault-muted">
+            Master Vault Passphrase
+          </label>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <div class="field-shell rounded-2xl border border-vault-border bg-[#120E0E] transition-all duration-200 flex-1">
+              <input
+                id="master-passphrase"
+                type="password"
+                placeholder="Enter passphrase"
+                class="w-full bg-transparent px-4 py-4 text-sm text-vault-text placeholder:text-[#7F7269] focus:outline-none"
+                autocomplete="current-password"
+              >
+            </div>
+            <button
+              id="unlock-button"
+              type="button"
+              class="rounded-full border border-vault-gold/40 bg-vault-gold px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0C0808] transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-vault-gold/60"
+            >
+              Unlock Vault
+            </button>
+          </div>
+          <p id="auth-status" class="text-sm text-vault-muted min-h-[20px]">Vault locked.</p>
+        </div>
+
+        <div class="mt-10 space-y-8">
+          <form id="rate-form" class="rounded-[24px] border border-vault-border bg-[#120E0E]/80 p-5 sm:p-6">
+            <fieldset id="rate-fieldset" disabled class="disabled:opacity-50">
+            <div class="flex items-center justify-between gap-4 border-b border-vault-border pb-4">
+              <div>
+                <p class="text-[10px] uppercase tracking-[0.26em] text-vault-muted">Section 01</p>
+                <h2 class="mt-2 font-heading text-2xl text-vault-text">Update Today's Rates</h2>
+              </div>
+              <div class="h-10 w-10 rounded-full border border-vault-border bg-vault-surface/70 flex items-center justify-center text-vault-gold">
+                <span class="text-lg">Au</span>
+              </div>
+            </div>
+
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <label class="space-y-2">
+                <span class="block text-[11px] uppercase tracking-[0.2em] text-vault-muted">22K (1 Gram)</span>
+                <div class="field-shell rounded-2xl border border-vault-border bg-vault-surface transition-all duration-200">
+                  <input name="rate22k1g" type="number" min="0" step="0.01" required class="w-full bg-transparent px-4 py-3.5 text-sm text-vault-text placeholder:text-[#7F7269] focus:outline-none" placeholder="13835">
+                </div>
+              </label>
+
+              <label class="space-y-2">
+                <span class="block text-[11px] uppercase tracking-[0.2em] text-vault-muted">22K (8 Gram)</span>
+                <div class="field-shell rounded-2xl border border-vault-border bg-vault-surface transition-all duration-200">
+                  <input name="rate22k8g" type="number" min="0" step="0.01" required class="w-full bg-transparent px-4 py-3.5 text-sm text-vault-text placeholder:text-[#7F7269] focus:outline-none" placeholder="110680">
+                </div>
+              </label>
+
+              <label class="space-y-2">
+                <span class="block text-[11px] uppercase tracking-[0.2em] text-vault-muted">18K (1 Gram)</span>
+                <div class="field-shell rounded-2xl border border-vault-border bg-vault-surface transition-all duration-200">
+                  <input name="rate18k1g" type="number" min="0" step="0.01" required class="w-full bg-transparent px-4 py-3.5 text-sm text-vault-text placeholder:text-[#7F7269] focus:outline-none" placeholder="11370">
+                </div>
+              </label>
+
+              <label class="space-y-2">
+                <span class="block text-[11px] uppercase tracking-[0.2em] text-vault-muted">Silver (1 Gram)</span>
+                <div class="field-shell rounded-2xl border border-vault-border bg-vault-surface transition-all duration-200">
+                  <input name="silver1g" type="number" min="0" step="0.01" required class="w-full bg-transparent px-4 py-3.5 text-sm text-vault-text placeholder:text-[#7F7269] focus:outline-none" placeholder="250">
+                </div>
+              </label>
+            </div>
+
+            <label class="mt-4 block space-y-2">
+              <span class="block text-[11px] uppercase tracking-[0.2em] text-vault-muted">Market Status</span>
+              <div class="field-shell rounded-2xl border border-vault-border bg-vault-surface transition-all duration-200">
+                <input name="marketStatus" type="text" required class="w-full bg-transparent px-4 py-3.5 text-sm text-vault-text placeholder:text-[#7F7269] focus:outline-none" placeholder="No change in rate">
+              </div>
+            </label>
+
+            <div class="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <button type="submit" class="rounded-full bg-vault-gold px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0C0808] transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-vault-gold/60">
+                Publish Rates
+              </button>
+              <p id="rate-status" class="text-sm text-vault-muted min-h-[20px]"></p>
+            </div>
+            </fieldset>
+          </form>
+
+          <form id="upload-form" class="rounded-[24px] border border-vault-border bg-[#120E0E]/80 p-5 sm:p-6">
+            <fieldset id="upload-fieldset" disabled class="disabled:opacity-50">
+            <div class="flex items-center justify-between gap-4 border-b border-vault-border pb-4">
+              <div>
+                <p class="text-[10px] uppercase tracking-[0.26em] text-vault-muted">Section 02</p>
+                <h2 class="mt-2 font-heading text-2xl text-vault-text">Upload to Collection</h2>
+              </div>
+              <div class="h-10 w-10 rounded-full border border-vault-border bg-vault-surface/70 flex items-center justify-center text-vault-gold">
+                <span class="text-lg">+</span>
+              </div>
+            </div>
+
+            <label class="mt-6 block">
+              <span class="mb-3 block text-[11px] uppercase tracking-[0.2em] text-vault-muted">Collection Asset</span>
+              <div class="rounded-[24px] border border-dashed border-[#5C4A45] bg-vault-surface/60 px-4 py-8 text-center transition hover:border-vault-gold/70">
+                <input id="collection-file" name="collectionFile" type="file" accept="image/*" required class="mx-auto block w-full max-w-xs cursor-pointer text-sm text-vault-muted file:mr-4 file:rounded-full file:border-0 file:bg-vault-gold file:px-4 file:py-2 file:text-xs file:font-semibold file:uppercase file:tracking-[0.2em] file:text-[#0C0808] hover:file:brightness-110">
+                <p class="mt-4 text-sm text-vault-muted">Select a polished product image for the vault.</p>
+              </div>
+            </label>
+
+            <div class="mt-4 grid gap-4">
+              <label class="space-y-2">
+                <span class="block text-[11px] uppercase tracking-[0.2em] text-vault-muted">Jewelry Title</span>
+                <div class="field-shell rounded-2xl border border-vault-border bg-vault-surface transition-all duration-200">
+                  <input name="title" type="text" required class="w-full bg-transparent px-4 py-3.5 text-sm text-vault-text placeholder:text-[#7F7269] focus:outline-none" placeholder="Royal Bloom Ring">
+                </div>
+              </label>
+
+              <label class="space-y-2">
+                <span class="block text-[11px] uppercase tracking-[0.2em] text-vault-muted">Tag / Category</span>
+                <div class="field-shell rounded-2xl border border-vault-border bg-vault-surface transition-all duration-200">
+                  <input name="tag" type="text" required class="w-full bg-transparent px-4 py-3.5 text-sm text-vault-text placeholder:text-[#7F7269] focus:outline-none" placeholder="22k Heritage Gold">
+                </div>
+              </label>
+            </div>
+
+            <div class="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <button type="submit" class="rounded-full bg-vault-gold px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0C0808] transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-vault-gold/60">
+                Upload to Vault
+              </button>
+              <p id="upload-status" class="text-sm text-vault-muted min-h-[20px]"></p>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const rateForm = document.getElementById("rate-form");
+    const uploadForm = document.getElementById("upload-form");
+    const passphraseInput = document.getElementById("master-passphrase");
+    const unlockButton = document.getElementById("unlock-button");
+    const authStatus = document.getElementById("auth-status");
+    const rateStatus = document.getElementById("rate-status");
+    const uploadStatus = document.getElementById("upload-status");
+    const rateFieldset = document.getElementById("rate-fieldset");
+    const uploadFieldset = document.getElementById("upload-fieldset");
+    const TOKEN_KEY = "vault_admin_token";
+    let authToken = sessionStorage.getItem(TOKEN_KEY) || "";
+
+    function setStatus(element, message, color) {
+      element.textContent = message;
+      element.style.color = color;
+    }
+
+    function setLockedState(isUnlocked) {
+      rateFieldset.disabled = !isUnlocked;
+      uploadFieldset.disabled = !isUnlocked;
+      unlockButton.textContent = isUnlocked ? "Vault Unlocked" : "Unlock Vault";
+      unlockButton.disabled = isUnlocked;
+      passphraseInput.disabled = isUnlocked;
+      if (isUnlocked) {
+        setStatus(authStatus, "Vault unlocked. Protected actions are enabled.", "#98d4ac");
+      } else {
+        setStatus(authStatus, "Vault locked.", "#B5AAA0");
+      }
+    }
+
+    async function verifyStoredSession() {
+      if (!authToken) {
+        setLockedState(false);
+        return;
+      }
+
+      try {
+        const response = await fetch("/api/admin/session", {
+          headers: {
+            Authorization: `Bearer ${authToken}`
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error("Expired session");
+        }
+
+        setLockedState(true);
+      } catch (error) {
+        sessionStorage.removeItem(TOKEN_KEY);
+        authToken = "";
+        setLockedState(false);
+      }
+    }
+
+    unlockButton.addEventListener("click", async () => {
+      setStatus(authStatus, "Unlocking...", "#B5AAA0");
+
+      try {
+        const response = await fetch("/api/admin/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            passphrase: passphraseInput.value
+          })
+        });
+
+        const result = await response.json();
+        if (!response.ok || !result.token) {
+          throw new Error(result.message || "Invalid passphrase");
+        }
+
+        authToken = result.token;
+        sessionStorage.setItem(TOKEN_KEY, authToken);
+        setLockedState(true);
+      } catch (error) {
+        const message = error instanceof Error ? error.message : "Invalid passphrase";
+        setStatus(authStatus, `Error: ${message}`, "#BA1A1A");
+      }
+    });
+
+    rateForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(rateForm);
+      const payload = {
+        rates: {
+          rate22k1g: formData.get("rate22k1g"),
+          rate22k8g: formData.get("rate22k8g"),
+          rate18k1g: formData.get("rate18k1g"),
+          silver1g: formData.get("silver1g")
+        },
+        marketStatus: formData.get("marketStatus")
+      };
+
+      setStatus(rateStatus, "Updating...", "#B5AAA0");
+
+      try {
+        const response = await fetch("/api/update-rate", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          let message = "Unauthorized";
+          try {
+            const result = await response.json();
+            message = result.message || message;
+          } catch {
+            // Keep default message when response body is not JSON.
+          }
+          throw new Error(message);
+        }
+
+        setStatus(rateStatus, "Successfully Updated", "#98d4ac");
+      } catch (error) {
+        const message = error instanceof Error ? error.message : "Unable to update rates";
+        setStatus(rateStatus, `Error: ${message}`, "#BA1A1A");
+      }
+    });
+
+    uploadForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(uploadForm);
+      setStatus(uploadStatus, "Updating...", "#B5AAA0");
+
+      try {
+        const response = await fetch("/api/upload-image", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${authToken}`
+          },
+          body: formData
+        });
+
+        if (!response.ok) {
+          let message = "Unauthorized";
+          try {
+            const result = await response.json();
+            message = result.message || message;
+          } catch {
+            // Keep default message when response body is not JSON.
+          }
+          throw new Error(message);
+        }
+
+        setStatus(uploadStatus, "Successfully Updated", "#98d4ac");
+        uploadForm.reset();
+      } catch (error) {
+        const message = error instanceof Error ? error.message : "Unable to upload image";
+        setStatus(uploadStatus, `Error: ${message}`, "#BA1A1A");
+      }
+    });
+
+    verifyStoredSession();
+  </script>
+</body>
+</html>

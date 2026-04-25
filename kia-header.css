@@ -1,0 +1,94 @@
+.kia-header-shell {
+    isolation: isolate;
+}
+
+.kia-header-bar {
+    position: relative;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.kia-header-bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 8, 8, 0.92);
+    opacity: 0;
+    transition: opacity 520ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
+.kia-header-bar > * {
+    position: relative;
+    z-index: 1;
+}
+
+.kia-header-shell:hover .kia-header-bar::before {
+    opacity: 1;
+}
+
+.kia-header-shell.kia-header-scrolled .kia-header-bar::before {
+    opacity: 0.96;
+}
+
+.kia-header-logo-mark,
+.kia-header-logo-text,
+.kia-header-logo-accent,
+.kia-nav-link,
+.kia-header-meta {
+    transition: color 360ms cubic-bezier(0.22, 1, 0.36, 1), opacity 360ms cubic-bezier(0.22, 1, 0.36, 1), transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.kia-header-shell:hover .kia-header-logo-text,
+.kia-header-shell.kia-header-scrolled .kia-header-logo-text {
+    color: #F5F2EB !important;
+}
+
+.kia-header-shell:hover .kia-header-logo-accent,
+.kia-header-shell.kia-header-scrolled .kia-header-logo-accent {
+    color: #d9e8dc !important;
+}
+
+.kia-header-shell.kia-header-scrolled .kia-header-logo-mark {
+    opacity: 0.98;
+}
+
+.kia-nav-link {
+    position: relative;
+    border-bottom: none !important;
+    padding-bottom: 0.45rem !important;
+}
+
+.kia-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.95;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.kia-header-shell:hover .kia-nav-link,
+.kia-header-shell.kia-header-scrolled .kia-nav-link,
+.kia-header-shell:hover .kia-header-meta,
+.kia-header-shell.kia-header-scrolled .kia-header-meta {
+    color: #F5F2EB !important;
+}
+
+.kia-nav-link:hover {
+    transform: translateY(-1px);
+}
+
+.kia-nav-link:hover::after,
+.kia-nav-link.kia-nav-current::after {
+    transform: scaleX(1);
+}

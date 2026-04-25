@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>VELLATHUR | Master Collections</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200;400;600;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#CCA365",
+                        "on-primary": "#F5F2EB",
+                        "primary-container": "#DDF3E4",
+                        "on-primary-container": "#092E17",
+                        "primary-fixed": "#DDF3E4",
+                        "on-primary-fixed": "#002110",
+                        "primary-fixed-dim": "#CCA365",
+                        "on-primary-fixed-variant": "#5E1C24",
+                        "secondary": "#CCA365",
+                        "on-secondary": "#F5F2EB",
+                        "secondary-container": "#F6F1E9",
+                        "on-secondary-container": "#3B311E",
+                        "secondary-fixed": "#F6F1E9",
+                        "on-secondary-fixed": "#221B0B",
+                        "secondary-fixed-dim": "#CCA365",
+                        "on-secondary-fixed-variant": "#4F4533",
+                        "tertiary": "#B89A31",
+                        "on-tertiary": "#F5F2EB",
+                        "tertiary-container": "#FDF4CE",
+                        "on-tertiary-container": "#423200",
+                        "tertiary-fixed": "#FDF4CE",
+                        "on-tertiary-fixed": "#241A00",
+                        "tertiary-fixed-dim": "#E9C349",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "error": "#BA1A1A",
+                        "on-error": "#F5F2EB",
+                        "error-container": "#FFDAD6",
+                        "on-error-container": "#410002",
+                        "outline": "#747775",
+                        "outline-variant": "#C4C7C5",
+                        "background": "#0C0808",
+                        "on-background": "#F5F2EB",
+                        "surface": "#1A1313",
+                        "on-surface": "#F5F2EB",
+                        "surface-variant": "#1A1313",
+                        "on-surface-variant": "#A1A1AA",
+                    },
+                    "borderRadius": {
+                        "none": "0",
+                        "DEFAULT": "0",
+                        "lg": "0",
+                        "xl": "0",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; background-color: #0C0808; color: #F5F2EB; -webkit-font-smoothing: antialiased; }
+        .font-noto-serif { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0C0808; }
+        ::-webkit-scrollbar-thumb { background: #CCA365; }
+        .glass-overlay, .bg-surface-container, .bg-primary-container, .bg-surface-container-high, .bg-surface-container-low, img:not([alt="Vellathur Logo"]), button, .aspect-square, .h-\[500px\] { border-radius: 1.5rem !important; } 
+        nav button { border-radius: 9999px !important; } 
+    </style>
+    <link href="kia-header.css" rel="stylesheet"/>
+    <link href="scroll-animate.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface text-on-surface">
+
+<!-- Loader Overlay -->
+<div id="loader" class="fixed inset-0 z-[10000] bg-[#0C0808] flex flex-col items-center justify-center transition-all duration-[1000ms] ease-[cubic-bezier(0.77,0,0.175,1)]">
+    <div class="relative flex flex-col items-center loader-content transition-all duration-[800ms]">
+        <div class="relative h-24 w-auto flex items-center justify-center">
+            <img src="Asset 3@3x (1).png" alt="Vellathur Logo" class="h-32 md:h-40 w-auto object-contain filter invert mix-blend-screen opacity-10">
+            <div class="absolute inset-0 flex items-center justify-center" style="clip-path: inset(100% 0 0 0); animation: revealLogo 1.5s cubic-bezier(0.77,0,0.175,1) forwards; animation-delay: 0.2s;">
+                <img src="Asset 3@3x (1).png" alt="Vellathur Logo" class="h-32 md:h-40 w-auto object-contain filter invert mix-blend-screen opacity-100" style="filter: invert(1) drop-shadow(0 0 10px rgba(204, 163, 101, 0.3));">
+            </div>
+        </div>
+        <div class="mt-10 w-[1px] h-16 bg-[#1A1313] relative overflow-hidden align-middle self-center">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-[#CCA365] to-transparent transform -translate-y-full" style="animation: dropLine 1.5s cubic-bezier(0.77,0,0.175,1) infinite;"></div>
+        </div>
+        <div class="mt-6 font-label text-[10px] tracking-[0.5em] uppercase text-outline-variant opacity-50" style="animation: pulseText 2s infinite;">
+            Curating
+        </div>
+    </div>
+</div>
+
+<style>
+    #loader.loaded { opacity: 0; pointer-events: none; }
+    #loader.loaded .loader-content { transform: translateY(-50px); opacity: 0; }
+    @keyframes revealLogo { 0% { clip-path: inset(100% 0 0 0); } 100% { clip-path: inset(0 0 0 0); } }
+    @keyframes dropLine { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+    @keyframes pulseText { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+</style>
+
+<script>
+    window.addEventListener('load', () => { setTimeout(() => { const loader = document.getElementById('loader'); if(loader) { loader.classList.add('loaded'); setTimeout(() => loader.remove(), 1000); } }, 1200); });
+</script>
+
+<script defer src="kia-header.js"></script>
+<script defer src="scroll-animate.js"></script>
+<header class="fixed top-0 left-0 right-0 z-50 flex w-full pointer-events-none">
+    <div class="flex justify-between items-center px-6 md:px-12 transition-all duration-300 h-[72px] w-full pointer-events-auto bg-[#1A1313]/70 backdrop-blur-xl border-b border-[#5E1C24]/40 shadow-xl flex-row group">
+        <div class="flex-none flex items-center mr-4 md:mr-6 gap-3 h-[40px] md:h-[48px]">
+            <a href="home.html" class="flex flex-row items-center justify-center group whitespace-nowrap gap-3">
+                <img src="images/IMG_1090.png" alt="Vellathur Logo" class="h-8 md:h-10 w-auto object-contain opacity-100 transition-opacity" style="filter: brightness(0) invert(1);">
+                
+            </a>
+        </div>
+        <nav class="hidden lg:flex gap-6 items-center font-noto-serif text-[10px] tracking-[0.15em] uppercase justify-center flex-1">
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="home.html">Home</a>
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="about.html">About Us</a>
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="collections.html">Collections</a>
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b border-transparent hover:border-[#CCA365] transition-colors py-1" href="#">New Arrivals</a>
+            <a class="text-[#F5F2EB] hover:text-[#CCA365] border-b-2 border-[#CCA365] transition-colors py-1" href="contact.html">Contact Us</a>
+        </nav>
+        <div class="flex-none flex items-center justify-end gap-5 ml-auto">
+            <div class="hidden md:flex flex-col items-end mr-2">
+                <span class="text-[#CCA365] text-[9px] font-label tracking-[0.2em] uppercase leading-none mb-1">Today's Rate</span>
+                <span class="text-[#F5F2EB] font-noto-serif text-[11px] tracking-wider">22K: ₹6,670/gm</span>
+            </div>
+
+
+        </div>
+    </div>
+</header>
+
+<main class="w-full relative z-10 flex flex-col pt-32 pb-24 bg-surface text-on-surface items-center min-h-screen">
+    <!-- Hero Section for Contact -->
+    <div class="text-center mb-16 px-4 max-w-3xl flex flex-col items-center">
+        <span class="font-label text-xs tracking-[0.3em] uppercase text-secondary mb-4 block">Reaching Out</span>
+        <h1 class="font-noto-serif text-5xl md:text-7xl mb-6 leading-tight tracking-tight text-white drop-shadow-md">
+            Get In <span class="italic text-primary">Touch</span>
+        </h1>
+        <p class="font-body text-on-surface-variant text-base md:text-lg max-w-xl mx-auto mb-10">
+            Whether you have an inquiry about a bespoke piece, need to coordinate an atelier visit, or simply wish to say hello, we are at your service.
+        </p>
+    </div>
+
+    <script>
+        var submitted = false;
+        function handleSuccess() {
+            if(submitted) {
+                const formBlock = document.getElementById("contact-form-wrapper");
+                const successBlock = document.getElementById("success-block");
+                
+                // Fade out transition
+                formBlock.style.opacity = '0';
+                formBlock.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    formBlock.style.display = 'none';
+                    successBlock.classList.remove("hidden");
+                    successBlock.classList.add("flex");
+                    
+                    // Fade in transition
+                    void successBlock.offsetWidth; // reflow
+                    successBlock.style.opacity = '1';
+                    successBlock.style.transform = 'scale(1)';
+                }, 400);
+            }
+        }
+    </script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleSuccess()"></iframe>
+
+    <!-- Two Column Layout for Map & Form -->
+    <div class="w-full max-w-7xl px-6 md:px-12 relative min-h-[400px] grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-16">
+        
+        <!-- Location & Map Block -->
+        <div class="flex flex-col gap-8 w-full h-full">
+            <div class="flex flex-col gap-4">
+                <span class="material-symbols-outlined text-4xl text-primary mb-2">storefront</span>
+                <h2 class="font-noto-serif text-3xl md:text-4xl text-on-surface">Experience Our Craft</h2>
+                <p class="font-body text-on-surface-variant text-base leading-relaxed max-w-lg mb-4">
+                    Step into our world of elegance and let us personally guide you through our beautiful collections. We would be absolutely thrilled to welcome you in person.
+                </p>
+                
+                <a href="https://share.google/k68kRt1lQ0LlezRqn" target="_blank" rel="noopener noreferrer" class="flex gap-4 items-start mb-2 group">
+                    <span class="material-symbols-outlined text-secondary opacity-80 mt-1 group-hover:opacity-100 transition-opacity">location_on</span>
+                    <div class="flex flex-col">
+                        <span class="font-label text-xs uppercase tracking-widest text-[#F5F2EB] group-hover:text-primary transition-colors mb-1">Tirur Showroom</span>
+                        <span class="font-body text-sm text-on-surface-variant leading-relaxed group-hover:text-on-surface transition-colors">Near System Electronics<br/>Tirur, Malappuram, Kerala</span>
+                    </div>
+                </a>
+
+                <div class="flex gap-4 items-start">
+                    <span class="material-symbols-outlined text-secondary opacity-80 mt-1">schedule</span>
+                    <div class="flex flex-col">
+                        <span class="font-label text-xs uppercase tracking-widest text-[#F5F2EB] mb-1">Opening Hours</span>
+                        <span class="font-body text-sm text-on-surface-variant leading-relaxed">Mon - Sat: 10:00 AM - 7:00 PM<br/>Sunday: Closed</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Embedded Map -->
+            <div class="w-full aspect-[16/9] lg:aspect-square relative flex-grow overflow-hidden border border-[#5E1C24]/30 glass-overlay p-2 mt-4 transition-all hover:border-[#CCA365]/50 group">
+                <!-- Using a visually embedded maps iframe styled natively -->
+                <iframe 
+                    src="https://maps.google.com/maps?q=Vellathur%20Jewellery,%20Tirur,%20Kerala&t=&z=18&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="rounded-xl filter transition-all duration-700 group-hover:filter-none object-cover">
+                </iframe>
+                
+                <!-- Transparent Clickable Overlay -->
+                <a href="https://share.google/k68kRt1lQ0LlezRqn" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10 w-full h-full cursor-pointer flex items-center justify-center bg-background/0 group-hover:bg-background/20 transition-all duration-300">
+                    <span class="bg-primary text-on-surface px-6 py-3 font-label text-xs uppercase tracking-widest rounded-full shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">map</span> Open in Google Maps
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact Form Container -->
+        <div class="w-full relative min-h-[400px] flex flex-col justify-center">
+        <!-- Form Block -->
+        <div id="contact-form-wrapper" class="transition-all duration-500 ease-in-out opacity-100 scale-100 origin-top">
+            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeDnjttOrIRpT8CEDlHIe9pKeXeHyVlhzhBbj4caF5d5bHO1Q/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="flex flex-col gap-8 bg-surface-variant/40 p-8 md:p-12 border border-[#5E1C24]/50 shadow-2xl relative overflow-hidden group mb-12">
+            
+            <!-- Glow aesthetic -->
+            <div class="absolute -top-1/2 -left-1/2 w-full h-full bg-primary/5 blur-[100px] pointer-events-none group-focus-within:bg-primary/20 transition-colors duration-1000"></div>
+
+            <div class="flex flex-col gap-1 relative z-10">
+                <label for="fullName" class="font-label text-[10px] tracking-[0.2em] uppercase text-[#888888]">Full Name</label>
+                <input type="text" id="fullName" name="entry.596194567" required class="bg-transparent border-b border-[#5E1C24] focus:border-primary text-[#F5F2EB] font-body text-base py-3 outline-none transition-colors duration-300 placeholder-[#5E1C24]" placeholder="Enter your name">
+            </div>
+
+            <div class="flex flex-col gap-1 relative z-10">
+                <label for="email" class="font-label text-[10px] tracking-[0.2em] uppercase text-[#888888]">Email Address</label>
+                <input type="email" id="email" name="entry.793124366" required class="bg-transparent border-b border-[#5E1C24] focus:border-primary text-[#F5F2EB] font-body text-base py-3 outline-none transition-colors duration-300 placeholder-[#5E1C24]" placeholder="your.email@domain.com">
+            </div>
+
+            <div class="flex flex-col gap-1 relative z-10">
+                <label for="phone" class="font-label text-[10px] tracking-[0.2em] uppercase text-[#888888]">Phone Number</label>
+                <input type="tel" id="phone" name="entry.920997745" required class="bg-transparent border-b border-[#5E1C24] focus:border-primary text-[#F5F2EB] font-body text-base py-3 outline-none transition-colors duration-300 placeholder-[#5E1C24]" placeholder="+91 00000 00000">
+            </div>
+
+            <div class="flex flex-col gap-1 relative z-10">
+                <label for="message" class="font-label text-[10px] tracking-[0.2em] uppercase text-[#888888]">Message (Optional)</label>
+                <textarea id="message" name="entry.1959578258" rows="4" class="bg-transparent border-b border-[#5E1C24] focus:border-primary text-[#F5F2EB] font-body text-base py-3 outline-none transition-colors duration-300 placeholder-[#5E1C24] resize-none" placeholder="How may we assist you today?"></textarea>
+            </div>
+
+            <button type="submit" class="relative z-10 mt-6 bg-on-surface text-surface hover:bg-primary-container hover:text-secondary px-8 py-5 font-label text-xs tracking-[0.2em] uppercase transition-all duration-500 w-full text-center">
+                Submit Inquiry
+            </button>
+        </form>
+        </div>
+        
+        <!-- Success Block -->
+        <div id="success-block" class="hidden flex-col items-center justify-center p-12 bg-surface-variant/20 border border-[#5E1C24]/50 shadow-2xl transition-all duration-500 ease-in-out opacity-0 scale-95 origin-top absolute top-0 left-6 right-6 md:left-12 md:right-12">
+            <span class="material-symbols-outlined text-[64px] text-primary mb-6">task_alt</span>
+            <h2 class="font-noto-serif text-3xl text-on-surface mb-4">Inquiry Received</h2>
+            <p class="font-body text-on-surface-variant text-base mb-8 text-center max-w-md">Your message has been seamlessly transmitted. A Vellathur atelier representative will be in touch shortly.</p>
+            <a href="home.html" class="bg-on-surface text-surface hover:bg-primary hover:text-white px-8 py-4 font-label text-xs tracking-[0.2em] uppercase transition-all duration-500 flex items-center justify-center gap-3">
+                <span class="material-symbols-outlined text-[16px]">arrow_back</span> Return to Home
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-[#0C0808] flex flex-col items-center gap-2 w-full w-full py-16 px-6 md:px-12 border-t border-[#5E1C24]/30">
+    <div class="flex flex-col items-center gap-4">
+        <div class="flex flex-col items-center">
+            <img src="images/IMG_1090.png" alt="Vellathur Logo" class="h-16 md:h-20 w-auto object-contain opacity-100 mb-4" style="filter: brightness(0) invert(1);">
+            
+        <div class="flex flex-col items-center space-y-1 mb-1">
+            <span class="font-label text-[9px] tracking-widest uppercase text-[#888888]">Tirur, Kerala • 22+ Years of Trust</span>
+        </div>
+        </div>
+    </div>
+    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-1 font-manrope text-[11px] tracking-[0.08em] text-[#CCA365]">
+        <a aria-label="Instagram" class="inline-flex items-center opacity-60 hover:opacity-100 transition-opacity" href="https://www.instagram.com/vellathur_gold_and_diamonds?igsh=dDZndWt5NnoxZGE4" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5ZM17.5 6.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/></svg></a>
+        <a aria-label="Email" class="inline-flex items-center opacity-60 hover:opacity-100 transition-opacity" href="mailto:vellathur916@gmail.com"><span class="material-symbols-outlined text-base">mail</span></a>
+        <a aria-label="Location" class="inline-flex items-center opacity-60 hover:opacity-100 transition-opacity" href="https://share.google/0uj0nIh3qxpYNAFAT" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-base">location_on</span></a>
+    </div>
+    <div class="font-manrope text-[10px] tracking-[0.2em] uppercase text-[#CCA365] opacity-40 mt-2 text-center">
+        © 2024 VELLATHUR GOLD & DIAMONDS. ALL RIGHTS RESERVED.
+    </div>
+</footer>
+
+<!-- Custom Cursor Elements -->
+<div id="custom-cursor" class="fixed top-0 left-0 w-3 h-3 bg-[#CCA365] rounded-full pointer-events-none z-[9999] mix-blend-difference transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out opacity-0 hidden md:block"></div>
+<div id="custom-cursor-follower" class="fixed top-0 left-0 w-10 h-10 border border-[#CCA365] rounded-full pointer-events-none z-[9998] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-out opacity-0 hidden md:block"></div>
+
+<style>
+    @media (min-width: 768px) {
+        body, a, button, input, select, textarea {
+            cursor: none !important;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.innerWidth < 768) return;
+        const cursor = document.getElementById('custom-cursor');
+        const cursorFollower = document.getElementById('custom-cursor-follower');
+        
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let followerX = window.innerWidth/2, followerY = window.innerHeight/2;
+        let isHovering = false;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.opacity = 1;
+            cursorFollower.style.opacity = 1;
+        });
+
+        const loop = () => {
+            cursorX += (mouseX - cursorX) * 0.4;
+            cursorY += (mouseY - cursorY) * 0.4;
+            followerX += (mouseX - followerX) * 0.15;
+            followerY += (mouseY - followerY) * 0.15;
+            const scale = isHovering ? 1.5 : 1;
+            cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+            cursorFollower.style.transform = `translate(${followerX}px, ${followerY}px) translate(-50%, -50%) scale(${scale})`;
+            requestAnimationFrame(loop);
+        };
+        loop();
+
+        const interactables = document.querySelectorAll('a, button');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                isHovering = true;
+                cursorFollower.style.backgroundColor = 'rgba(204, 163, 101, 0.2)';
+            });
+            el.addEventListener('mouseleave', () => {
+                isHovering = false;
+                cursorFollower.style.backgroundColor = 'transparent';
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
